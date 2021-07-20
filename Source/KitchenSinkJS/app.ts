@@ -1,33 +1,22 @@
-let firstName = "sophia";
+let firstName: string = "sophia";
 
 console.log(firstName);
 
-const numOfStates = 50;
+const numOfStates: number = 50;
 
 console.log(numOfStates);
 
-let val = 5 + 4;
+let val: number = 5 + 4;
 
 console.log(val);
 
-
-//functionality documented//
-//this is the function definition
-
-//not using parameters
-// function sayHello() {
-//   alert("Hello World");
-// }
-
-//using parameters
-function sayHello() {
+function sayHello(): void {
   alert("Hello World!");
 }
 
-//function call (actually runs the function)
 sayHello();
 
-function checkAge(name, age) {
+function checkAge(name: string, age: number): void {
         if (age < 21) {
             alert( "Sorry " + name + " you aren't old enough to view this page!")
         }
@@ -38,20 +27,30 @@ checkAge("Abby", 27)
 checkAge("James", 18)
 checkAge("John", 17)
 
-let veggies = ["broccoli", "brussel sprouts", "asparagus", "corn", "potatoes"];
+let veggies: string[] = ["broccoli", "brussel sprouts", "asparagus", "corn", "potatoes"];
 
 for (let i = 0; i < veggies.length; i++) {
     console.log(veggies[i])
 }
 
-let pet = {
+interface myInterface {
+    name: string, 
+    breed: string
+};
+
+let pet: myInterface = {
     name: "Archie",
     breed:'Dachshund'
 }
 
 console.log(pet.name, pet.breed)
 
-let myFriends = [
+interface person {
+    name: string, 
+    age: number
+};
+
+let myFriends: person[] = [
     {
         name:"Logan",
         age:26
@@ -78,11 +77,11 @@ for (let i = 0; i < myFriends.length; i++) {
     checkAge(myFriends[i].name, myFriends.age)
 }
 
-function getLength(word) {
+function getLength(word: string): number {
     return word.length
 }
 
-let wordLength = getLength("Hello World!")
+let wordLength: number = getLength("Hello World!")
 
 if(wordLength % 2 == 0) {
     console.log("The world is nice and even!")
